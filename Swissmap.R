@@ -33,7 +33,7 @@ newdf <- newdf[newdf$OBJEKTART == "Gemeindegebiet", ]
 newdf <- spTransform(newdf, CRS("+init=epsg:4326"))
 
 # Import data
-faux <- read.csv(...)
+faux <- read.csv(~/faux.csv)
 
 #Import Bfs-Number and Zip-Code
 bfs <- read.csv("~/bfsnummern.csv")
