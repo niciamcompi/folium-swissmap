@@ -18,7 +18,7 @@ library(scales)
 
 
 #load shipefiles
-shapefile_path <- "W:/07_Forschung/07_MACH Consumer/28_Consumer 2025/Organisation/Alternativ zu Tableau/Gemeinden.shp"
+shapefile_path <- "~/Gemeinden.shp"
 layers <- ogrListLayers(dsn = shapefile_path)
 all_layers <- list()
 for (layer_name in layers) {
@@ -36,7 +36,7 @@ newdf <- spTransform(newdf, CRS("+init=epsg:4326"))
 faux <- read.csv(...)
 
 #Import Bfs-Number and Zip-Code
-bfs <- read.csv("W:/07_Forschung/07_MACH Consumer/28_Consumer 2025/Organisation/Alternativ zu Tableau/Datensaetze/bfsnummern.csv")
+bfs <- read.csv("~/bfsnummern.csv")
 
 # Merge data
 merged <- merge(faux, bfs, by.x = "zip", by.y = "PLZ", all.x = TRUE)
