@@ -32,7 +32,7 @@ df1['zip'] = df1['zip'].astype("Int64")
 
 # Merge datasets and handle duplicates
 merged = pd.merge(df1, df2, left_on='zip', right_on='PLZ', how='inner')
-merged = merged.drop_duplicates(subset=['MACH_ID'])
+merged = merged.drop_duplicates(subset=['id'])
 
 # Group by postal code and BFS number, then merge with GeoDataFrame
 merged2 = merged.groupby(['PLZ', 'WOBFS']).size().reset_index(name='counts')
